@@ -18,8 +18,10 @@ app.use('/uploads', express.static(uploadsPath));
 console.log("Ruta a la carpeta uploads: ", uploadsPath);
 
 // Configuración de CORS: Permitir solo el origen del frontend con credenciales
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"
+
 app.use(cors({
-  origin: "http://localhost:5173", // Permitir solo este origen
+  origin: FRONTEND_URL, // Para el deploy cambiar por FRONTENT_URL
   credentials: true, // Permitir el envío de cookies o headers de autenticación
 }));
 
