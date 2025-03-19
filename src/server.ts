@@ -18,7 +18,7 @@ app.use('/uploads', express.static(uploadsPath));
 console.log("Ruta a la carpeta uploads: ", uploadsPath);
 
 // Configuración de CORS: Permitir solo el origen del frontend con credenciales
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"
+const FRONTEND_URL = process.env.FRONTEND_URL || "https://keyla-frontend.vercel.app"
 
 app.use(cors({
   origin: FRONTEND_URL, // Para el deploy cambiar por FRONTENT_URL
